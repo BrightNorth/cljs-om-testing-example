@@ -2,7 +2,7 @@
 
 An example repo demonstrating unit and browser-testing an Om application.
 
-See the blog post for more info.
+See the [blog post](http://lab.brightnorth.co.uk/2015/01/27/unit-and-browser-testing-om-clojurescript-applications) for more info.
 
 
 ## Usage
