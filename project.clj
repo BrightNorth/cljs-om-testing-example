@@ -5,7 +5,7 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
 
   :dependencies [[org.clojure/clojure "1.6.0"]
-                 [org.clojure/clojurescript "0.0-2371" :scope "provided"]
+                 [org.clojure/clojurescript "0.0-2496" :scope "provided"]
                  [ring "1.3.1"]
                  [compojure "1.2.0"]
                  [enlive "1.1.5"]
@@ -20,7 +20,6 @@
                  [leiningen "2.5.0"]]
 
   :plugins [[lein-cljsbuild "1.0.4"]
-            [com.cemerick/clojurescript.test "0.3.3"]
             [lein-environ "1.0.0"]]
 
   :min-lein-version "2.5.0"
@@ -58,11 +57,11 @@
                    :env {:is-dev true}
 
                    :cljsbuild {
-                               :test-commands {"test" ["phantomjs" :runner "phantom/bind-polyfill.js" "target/cljs/testable.js"]}
+                               :test-commands {"unit-tests" ["phantomjs" "phantom/unit-test.js" "phantom/unit-test.html"]}
                                :builds {
                                         :app {:source-paths ["src/cljs" "env/dev/cljs"]}
                                         :test {:source-paths ["src/cljs" "test/cljs"]
-                                               :notify-command ["phantomjs" :cljs.test/runner "phantom/bind-polyfill.js" "target/cljs/testable.js"]
+                                               :notify-command ["phantomjs" "phantom/unit-test.js" "phantom/unit-test.html"]
                                                :compiler {:output-to "target/cljs/testable.js"
                                                           :optimizations :whitespace
                                                           :preamble ["react/react.min.js"]

@@ -1,7 +1,5 @@
 (ns example.test.common
-  (:require-macros [cemerick.cljs.test :refer (is deftest with-test run-tests testing)])
-  (:require [cemerick.cljs.test :as t]
-            [dommy.core :refer-macros [sel sel1]]
+  (:require [dommy.core :refer-macros [sel sel1]]
             [om.core :as om :include-macros true]))
 
 (defn insert-container! [container]
